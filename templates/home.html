@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Home</title>
+	<style>
+
+/* Header/Logo Title */
+.header {
+  padding: 25px;
+  text-align: center;
+  background: black;
+  color: white;
+  font-size: 28px;
+}
+
+.result {
+
+  text-align: center;
+  color: white;
+  font-size: 18px;
+}
+
+</style>
+</head>
+
+<body>
+ <center>
+	
+<div class="header">
+  <h1>Fuel Efficiency Prediction</h1>
+</div>
+     <!-- Main Input For Receiving Query to our ML -->
+    <div class="container-fluid">
+        <div class="col-lg-12">
+                <form action="{{ url_for('result') }}" method="post">
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="cylinders">Number of cylinders</label>
+                            </div>
+                            <div class="col-lg-6 col-md-8">
+                                <input type="text" class="form-control" id="cylinders" name="cylinders" placeholder="Number of cylinders">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="Displacement">Total Displacement</label>
+                            </div>
+                            <div class="col-lg-6 col-md-8">
+                                <input type="text" class="form-control" id="displacement" name="displacement" placeholder="Total Displacement">
+                                    
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="trestbps">Horsepower  </label>
+                            </div>
+                            <div class="col-lg-6 col-md-8">
+                                <input type="text" class="form-control" id="horsepower" name="horsepower" placeholder="Total horsepower">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="weight">Total Weight </label>
+                            </div>
+                            <div class="col-lg-6 col-md-8">
+                                <input type="text" class="form-control" id="weight" name="weight" placeholder="Total Weight">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="acceleration">Acceleration</label>
+                            </div>
+                            <div class="col-lg-6 col-md-8">
+                                <input type="text" class="form-control" id="acceleration" name="acceleration" placeholder="Top Acceleration">
+                                    
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="model_year">Model Year </label>
+                            </div>
+                            <div class="col-lg-6 col-md-8">
+                                <input type="text" class="form-control" id="model_year" name="model_year" placeholder="(Last 2 digits of the year only: eg. 70)">
+                                    
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="origin">Origin Number</label>
+                            </div>
+                            <div class="col-lg-6 col-md-8">
+                                <input type="text" class="form-control" id="origin" name="origin" placeholder=" Origin Number">
+                            </div>
+                        </div>
+                        <br>
+                        
+                        <br>
+                        
+						
+						<div class="result">
+   
+						<h6>
+								{{ prediction_text }}
+						</h6>
+   
+						</div>
+						
+						<br>
+						
+                        <center>
+                            <button type="submit" class="btn btn-dark" value="submit">Submit</button>
+                        </center>
+						
+                </form>
+				  
+        </div>
+    </div>
+
+   <br>
+   <br>
+ 
+
+ </center>
+
+
+</body>
+
+<style>
+body {
+    background-color: #626269;
+}
+
+.col-lg-4 {
+    color: #ffffff;
+}
+</style>
+</html>
